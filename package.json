@@ -4,7 +4,8 @@
   "description": "This is an example of Express web",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "dev": "nodemon -r dotenv/config app.js"
   },
   "repository": {
     "type": "git",
