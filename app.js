@@ -20,12 +20,12 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-  const preguntas = [
+  const test = [
     { marca: 'Audi', modelo: 'A3' },
     { marca: 'BMW', modelo: 'X6' },
     { marca: 'Mercedes', modelo: 'A380' }
   ];
-  res.render('index', { preguntas: preguntas, titulo: 'Índice' });
+  res.render('index', { test: test, titulo: 'Índice' });
 });
 
 
