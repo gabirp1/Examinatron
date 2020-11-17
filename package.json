@@ -1,0 +1,28 @@
+{
+  "name": "examinatron",
+  "version": "1.0.0",
+  "description": "This is an example of Express web",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabirp1/Examinatron.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabirp1/Examinatron/issues"
+  },
+  "homepage": "https://github.com/gabirp1/Examinatron#readme",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.15"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.6"
+  }
+}
