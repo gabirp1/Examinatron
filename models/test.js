@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const Pregunta = mongoose.model('Coche', {
+const Test = mongoose.model('Test', {
     question:{
         type: String,
         required: true,
@@ -18,13 +18,13 @@ const Pregunta = mongoose.model('Coche', {
         required: true,
         trim: true,
         lowercase: true
-    }
+    },
     answer3:{
         type: String,
         required: true,
         trim: true,
         lowercase: true
-    }
+    },
     answer4:{
         type: String,
         required: true,

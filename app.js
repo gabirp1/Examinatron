@@ -1,7 +1,7 @@
 const express = require('express')
 
 require('./db/mongoose')
-const cocheRouter = require('./routers/coche')
+const testRouter = require('./routers/test')
 
 const port = process.env.PORT
 
@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
 
 
 app.use(express.json())
-app.use('/api', cocheRouter)
+app.use('/api', testRouter)
 
 // 404 page
 app.use((req, res) => {
