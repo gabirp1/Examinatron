@@ -1,0 +1,14 @@
+<%- include('./partials/header.ejs') %>
+    <main>
+        <section>
+            
+        
+
+            <% preguntas.forEach((pregunta)=>{ %>
+            <h3><%= pregunta.pregunta %> </h3>
+            <p><%= pregunta.answer1 %> <%= pregunta.answer2 %> <%= pregunta.answer3 %> <%= pregunta.answer4 %></p>
+            <%  }) %>
+
+        </section>
+    </main>
+<%- include('./partials/footer.ejs') %>
