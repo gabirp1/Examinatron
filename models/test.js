@@ -33,4 +33,4 @@ const Test = mongoose.model('Test', {
     }
 })
 
-module.exports = Pregunta
+module.exports = Test
