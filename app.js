@@ -20,13 +20,13 @@ app.set('view engine', 'ejs');
 // middleware & static files
 app.use(express.static('public'));
 
-app.get('/tests', async (req, res) => {
+app.get('/', async (req, res) => {
   try{
     const tests =await Test.find({})
     res.render('index', { tests: tests, titulo: 'Índice' });
   }catch (e){
 
-  res.render('index', { tests: tests, titulo: 'Índice' });
+  res.render('index', { tests: [], titulo: 'Índice' });
   }
 });
 
