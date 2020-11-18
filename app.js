@@ -33,6 +33,10 @@ app.get('/', async (req, res) => {
 app.use(express.json())
 app.use('/api', testRouter)
 
+app.get('/form', (req, res) => {
+  res.render('form', { title: 'Form' });
+});
+
 // 404 page
 app.use((req, res) => {
   res.status(404).render('404', { titulo: '404' });
