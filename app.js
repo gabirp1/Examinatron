@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
     { marca: 'BMW', modelo: 'X6' },
     { marca: 'Mercedes', modelo: 'A380' }
   ];
-  res.render('index', { tests: test, titulo: 'Índice' });
+  res.render('index', { test: test, titulo: 'Índice' });
 });
 
 
