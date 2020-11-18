@@ -1,14 +1,24 @@
-<%- include('./partials/header.ejs') %>
+
+
+
+
+<%- include("./partials/header.ejs") %>
+
     <main>
-        <section>
-            
-      
+        <h1>WELCOME TO THE MAIN PAGE!</h1><br>
+        <h2>Quizzes that are available rigth now:</h2>
+        <div class="listQuizzes">
+        <% tests.forEach((test) => { %>
+            <div class="quizContainer">
+                <strong><p><%= test.question %> </p></strong>
+                <p>A. <%= test.answer1 %> </p>
+                <p>B. <%= test.answer2 %> </p>
+                <p>C. <%= test.answer3 %> </p>
+                <p>D. <%= test.answer4 %> </p>
+            </div>
+         <% }) %>
+        </div>
+     </main>
+    
 
-            <% test.forEach((tests)=>{ %>
-            <h3><%= test.question %> </h3>
-            <p><%= test.answer1 %> <%= test.answer2 %> <%= test.answer3 %> <%= test.answer4 %></p>
-            <%  }) %>
-
-        </section>
-    </main>
-<%- include('./partials/footer.ejs') %>
+<%- include("./partials/footer.ejs") %>
