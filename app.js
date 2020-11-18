@@ -21,11 +21,12 @@ app.use(express.static('public'));
 
 app.get('/', (req, res) => {
   const test = [
-  {question,answer1,answer2,answer3,answer4}
+    { marca: 'Audi', modelo: 'A3' },
+    { marca: 'BMW', modelo: 'X6' },
+    { marca: 'Mercedes', modelo: 'A380' }
   ];
   res.render('index', { test: test, titulo: 'Índice' });
 });
-
 
 app.use(express.json())
 app.use('/api', testRouter)
@@ -34,3 +35,4 @@ app.use('/api', testRouter)
 app.use((req, res) => {
   res.status(404).render('404', { titulo: '404' });
 });
+
