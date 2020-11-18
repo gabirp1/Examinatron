@@ -31,7 +31,7 @@ app.get('/', async (req, res) => {
 });
 
 app.get('/form', (req, res) => {
-  res.render('form', { title: 'Form' });
+  res.render('form', { titulo: 'Form' });
 });
 
 app.use(express.json())
