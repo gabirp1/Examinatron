@@ -1,4 +1,5 @@
-const express = require('express')
+const express = require('express');
+const Test = require('./models/test');
 
 require('./db/mongoose')
 const testRouter = require('./routers/test')
@@ -19,13 +20,14 @@ app.set('view engine', 'ejs');
 // middleware & static files
 app.use(express.static('public'));
 
-app.get('/', (req, res) => {
-  const test = [
-    { marca: 'Audi', modelo: 'A3' },
-    { marca: 'BMW', modelo: 'X6' },
-    { marca: 'Mercedes', modelo: 'A380' }
-  ];
+app.get('/tests', async (req, res) => {
+  try{
+    const tests =await Test.find({})
+    res.render('index', { test: test, titulo: 'Índice' });
+  }catch (e){
+
   res.render('index', { test: test, titulo: 'Índice' });
+  }
 });
 
 app.use(express.json())
