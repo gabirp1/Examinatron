@@ -30,12 +30,14 @@ app.get('/', async (req, res) => {
   }
 });
 
-app.use(express.json())
-app.use('/api', testRouter)
-
 app.get('/form', (req, res) => {
   res.render('form', { title: 'Form' });
 });
+
+app.use(express.json())
+app.use('/api', testRouter)
+
+
 
 // 404 page
 app.use((req, res) => {
