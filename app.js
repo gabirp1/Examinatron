@@ -21,9 +21,7 @@ app.use(express.static('public'));
 
 app.get('/', (req, res) => {
   const test = [
-    { marca: 'Audi', modelo: 'A3' },
-    { marca: 'BMW', modelo: 'X6' },
-    { marca: 'Mercedes', modelo: 'A380' }
+  {question,answer1,answer2,answer3,answer4}
   ];
   res.render('index', { test: test, titulo: 'Índice' });
 });
