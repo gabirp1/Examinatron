@@ -34,11 +34,9 @@ app.get('/form', (req, res) => {
   res.render('form', { titulo: 'Form' });
 });
 
-app.get('/crear', (req, res) => {
-  res.render('crear', {  })
-});
 
-app.post('/crear', (req,res) => {
+
+app.post('/form', (req,res) => {
   res.redirect(307, './')
 })
 
