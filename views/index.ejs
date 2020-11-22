@@ -11,12 +11,22 @@
               
                <h3 class="title"><%= test.question %></h3>
                 <ol>
-                    <li><%= test.answer1 %></li>
-                    <li><%= test.answer2 %></li>
-                    <li><%= test.answer3 %></li>
-                    <li><%= test.answer4 %></li>
+                    
+                    <input type="radio" name=<%= test.question %>>
+                    <label for="answer1"> <%= test.answer1 %> </label>
+                    <input type="radio" name=<%= test.question %>>
+                    <label for="answer2"> <%= test.answer2 %> </label>
+                    <input type="radio" name=<%= test.question %>>
+                    <label for="answer3"> <%= test.answer3 %> </label>
+                    <input type="radio" name=<%= test.question %>>
+                    <label for="answer4"> <%= test.answer4 %> </label>
+                    
+                    
+                  
                 </ol>
                 
+                
+
                 <% }) %>
                 <% } else { %>
                 <p>No hay nada que mostrar...</p>
