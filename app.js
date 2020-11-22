@@ -20,6 +20,9 @@ app.set('view engine', 'ejs');
 // middleware & static files
 app.use(express.static('public'));
 
+app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies
+app.use(express.json()); // Parse JSON bodies
+
 app.get('/', async (req, res) => {
   try{
     const tests =await Test.find({})
