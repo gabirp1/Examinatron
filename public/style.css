@@ -14,7 +14,7 @@
       max-width: 1200px; font-style: bold;
     }
     p, h1, h2, h3, a, ul{
-      margin: 0;
+      margin top: 5px;
       padding: 0;
       text-decoration: none;
       color: #222;
