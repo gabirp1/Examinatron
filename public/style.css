@@ -11,7 +11,7 @@
       margin: 20px auto;
       padding: 0 20px;
       font-family: 'Noto Serif', serif;
-      max-width: 1200px;
+      max-width: 1200px; font-style: bold;
     }
     p, h1, h2, h3, a, ul{
       margin: 0;
