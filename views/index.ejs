@@ -1,40 +1,40 @@
 <%- include('./partials/header.ejs') %>
-    <main>
-        <section>
-            
-      
+<main>
+    <section>
 
-            <div class="tests content">
-                <h2>Todos los Tests</h2>
-                <% if (tests.length > 0) { %>
-                <% tests.forEach(test => { %>
-              
-               <h3 class="title"><%= test.question %></h3>
-                <ol>
-                    
-                    <li><input type="radio" name=<%= test.question %>>
+
+
+        <div class="tests content">
+            <h2>Todos los Tests</h2>
+            <% if (tests.length > 0) { %>
+            <% tests.forEach(test => { %>
+
+            <h3 class="title"><%= test.question %></h3>
+            <ol>
+
+                <li><input type="radio" name=<%= test.question %>>
                     <label for="answer1"> <%= test.answer1 %> </label></li>
-                    <li><input type="radio" name=<%= test.question %>>
+                <li><input type="radio" name=<%= test.question %>>
                     <label for="answer2"> <%= test.answer2 %> </label></li>
-                    <li><input type="radio" name=<%= test.question %>>
+                <li><input type="radio" name=<%= test.question %>>
                     <label for="answer3"> <%= test.answer3 %> </label></li>
-                    <li><input type="radio" name=<%= test.question %>>
+                <li><input type="radio" name=<%= test.question %>>
                     <label for="answer4"> <%= test.answer4 %> </label></li>
-                    
-                    
-                  
-                </ol>
-                
-                
 
-                <% }) %>
-                <% } else { %>
-                <p>No hay nada que mostrar...</p>
-                <% } %>
-              
-              </div>
-              
 
-        </section>
-    </main>
+
+            </ol>
+
+
+
+            <% }) %>
+            <% } else { %>
+            <p>No hay nada que mostrar...</p>
+            <% } %>
+
+        </div>
+
+
+    </section>
+</main>
 <%- include('./partials/footer.ejs') %>
