@@ -14,12 +14,14 @@
       max-width: 1200px; font-style: bold;
     }
     p, h1, h2, h3, a, ul{
-      margin top: 5px;
+      margin top: 0;
       padding: 0;
       text-decoration: none;
       color: #222;
     }
     header{text-align: center;}
+
+    ol li{ display: inline-block; padding: 0 5px;}
     /* nav & footer styles */
     nav{
       display: flex;
@@ -36,7 +38,7 @@
     }
     nav li{
       list-style-type: none;
-      margin-left: 20px;
+      margin-left: 20px; margin-top: 5px;
     }
     nav h1{
       font-size: 3em;
