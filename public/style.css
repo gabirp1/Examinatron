@@ -19,7 +19,7 @@
       text-decoration: none;
       color: #222;
     }
-    header a {text-align: center;}
+    header{text-align: center;}
     /* nav & footer styles */
     nav{
       display: flex;
