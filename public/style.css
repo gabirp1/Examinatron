@@ -21,7 +21,7 @@
     }
     header{text-align: center;}
 
-    ol li{padding: 0 5px;}
+    ol li{margin-top: 10px;}
     /* nav & footer styles */
     nav{
       display: flex;
