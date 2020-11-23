@@ -21,7 +21,7 @@
     }
     header{text-align: center;}
 
-    ol li{margin-top: 10px;}
+    ol li{margin-top: 10px; padding-bottom: 5px;}
     /* nav & footer styles */
     nav{
       display: flex;
