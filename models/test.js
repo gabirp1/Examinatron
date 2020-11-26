@@ -30,6 +30,11 @@ const Test = mongoose.model('Test', {
         required: true,
         trim: true,
         lowercase: true
+    },
+    solution:{
+        type: Number,
+        required: true,
+        enum: [1,2,3,4]
     }
 })
 

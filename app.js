@@ -33,6 +33,7 @@ app.get('/', async (req, res) => {
   }
 });
 
+
 app.get('/form', (req, res) => {
   res.render('form', { titulo: 'Form' });
 });
@@ -42,6 +43,7 @@ app.get('/form', (req, res) => {
 app.post('/form', (req,res) => {
   res.redirect(307, './')
 })
+
 
 app.use(express.json())
 app.use('/api', testRouter)
