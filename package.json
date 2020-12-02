@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon -r dotenv/config app.js",
-    "sass":"sass --watch src/:public/"
+    "sass": "sass --watch src/:public/"
   },
   "repository": {
     "type": "git",
@@ -19,9 +19,11 @@
   },
   "homepage": "https://github.com/gabirp1/Examinatron#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
-    "mongoose": "^5.10.15"
+    "mongoose": "^5.10.15",
+    "validator": "^13.5.1"
   },
   "devDependencies": {
     "dotenv": "^8.2.0",

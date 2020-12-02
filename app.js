@@ -35,10 +35,6 @@ app.get('/', async (req, res) => {
   }
 });
 
-const User = function (client) {
-  client: client
-};
-
 
 app.get('/form', (req, res) => {
   res.render('form', { titulo: 'Form' });

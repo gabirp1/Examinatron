@@ -1,33 +1,45 @@
 const mongoose = require('mongoose')
+const validator= require ('validator')
 
 const User = mongoose.model('User', {
-    name:{
-        type: String,
-        required: true,
-        trim: true,
-        lowercase: true
-        
-    },
-    email:{
+    name: {
         type: String,
         required: true,
         trim: true,
         lowercase: true
     },
-    password:{
+    email: {
         type: String,
+        unique: true,    ////ponemos este parametro para comprobar que no existen varios usuarios con ese correo
         required: true,
-        trim: true,
+        trim:true,
         lowercase: true,
-        minlength: 7
+        validate(value) {
+            if (!validator.isEmail(value)) {
+                throw new Error('Correo no válido')
+            }
+        }
     },
-    age:{
+    password: {
         type: String,
         required: true,
         trim: true,
         lowercase: true,
-        value: 0
+        minLength: [7,'Debe contener mínimo 7 caracteres'],
+        validate(value){
+            if (value.toLowerCase().includes('password')) {
+                throw new Error('Password inválido')
+            }
+        }
+    },
+    age: {
+        type: Number,
+        default: 0,
+        validate(value) {
+            if (!value<0) {
+                throw new Error('La edad debe ser positiva')
+            }
+         }
     }
 })
-
 module.exports = User
