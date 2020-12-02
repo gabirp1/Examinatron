@@ -18,7 +18,7 @@ const Test = mongoose.model('Test', {
         type: String,
         required: true,
         trim: true,
-        lowercase: true
+        lowercase: true,
         minlength: 7
     },
     age:{
@@ -26,5 +26,6 @@ const Test = mongoose.model('Test', {
         required: true,
         trim: true,
         lowercase: true,
-        value: >0
+        value: 0
     }
+})
