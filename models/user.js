@@ -29,3 +29,5 @@ const User = mongoose.model('User', {
         value: 0
     }
 })
+
+module.exports = User
