@@ -35,6 +35,15 @@ app.get('/', async (req, res) => {
   }
 });
 
+app.get('/', async (req, res) => {
+  try{
+    const users =await User.find({})
+    res.render('index', { users: users, titulo: 'Índice' });
+  }catch (e){
+
+  res.render('index', { users: [], titulo: 'Índice' });
+  }
+});
 
 app.get('/form', (req, res) => {
   res.render('form', { titulo: 'Form' });
