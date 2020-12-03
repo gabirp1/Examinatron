@@ -10,7 +10,7 @@ const User = mongoose.model('User', {
     },
     email: {
         type: String,
-        unique: true,    ////ponemos este parametro para comprobar que no existen varios usuarios con ese correo
+        unique: true,    ////ponemos este parámetro para comprobar que no existen varios usuarios con ese correo
         required: true,
         trim:true,
         lowercase: true,
