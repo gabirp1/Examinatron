@@ -55,6 +55,16 @@ app.post('/form', (req,res) => {
   res.redirect(307, './')
 })
 
+app.get('/form1', (req, res) => {
+  res.render('form1', { titulo: 'Form1' });
+});
+
+
+
+app.post('/form1', (req,res) => {
+  res.redirect(307, './')
+})
+
 
 app.use(express.json())
 app.use('/api', testRouter)
