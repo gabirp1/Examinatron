@@ -37,13 +37,23 @@ const userSchema = mongoose.Schema({
         type: Number,
         default: 0,
         min: 0
-    }
+    },
+    tokens:[
+        {token:{
+            type:String,
+            required:true
+        }}
+    ]
 })
 
 userSchema.methods.generateAuthToken = async function(){
 const user = this
 const token = await jsonwebtoken.sign({_id: user._id.toString()},
 'estoessupersecreto', {expiresIn:'7 Days'})
+
+user.tokens=user.tokens.concat({token:token})
+await user.save()
+
 return token
 }
 
