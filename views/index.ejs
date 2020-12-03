@@ -37,24 +37,7 @@
         </div>
 
 
-        <div class="user content">
-            <h2>Users</h2>
-            <% if (users.length > 0) { %>
-            <% users.forEach(user => { %>
-
-            <h3 class="title"><%= user.name %></h3>
-            <ol>
-                
-                <li><input type="radio" name=<%= user.name %>>
-                    <label for="name"> <%= user.name %> </label></li>
-                <li><input type="radio" name=<%= user.name %>>
-                    <label for="email"> <%= user.email %> </label></li>
-                <li><input type="radio" name=<%= user.test %>>
-                    <label for="password"> <%= test.password %> </label></li>
-                <li><input type="radio" name=<%= test.name %>>
-                    <label for="age"> <%= user.age %> </label></li>
-              
-
+       
     </section>
 </main>
 <%- include('./partials/footer.ejs') %>
