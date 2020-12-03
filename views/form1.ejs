@@ -1,0 +1,20 @@
+<%- include('./partials/header.ejs') %>
+
+
+<form id="user" action="/api/users" method="POST">
+   <ul> 
+     <li><label for="name">Nombre:</label>
+    <textarea id="name" name="name" required rows="2" cols="70"></textarea></li>
+    <li><label for="email">Email:</label>
+    <textarea id="email" name="email" required rows="2" cols="70"></textarea></li>
+    <li><label for="password">Password:</label>
+    <textarea id="password" name="password" required rows="2" cols="70"></textarea></li>
+    <li><label for="age">Edad:</label>
+    <textarea id="age" name="age" required rows="2" cols="70"></textarea></li>
+       
+    <li><input type="submit" value="Crear usuario"></li>
+  </ul>
+  </form>
+
+
+  <%- include('./partials/footer.ejs') %>
