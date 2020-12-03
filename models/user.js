@@ -39,6 +39,18 @@ const userSchema = mongoose.Schema({
     }
 })
 
+userSchema.statics.findUserByCredentials = async (email, password)=>{
+    const user = await User.findOne({email: email})
+    if (!user){
+        throw new Error ('Email o password no válidos')
+    }
+    const isOk = await bcrypt.compare(password, user.password)
+    if(!isOk){
+        throw new Error ( 'Email o password no válidos')
+    }
+    return user
+}
+
 userSchema.pre('save', async function(next){
     const user = this; // Hace referencia al esquema
     if(user.isModified('password')){
