@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
 const bcrypt = require('bcryptjs');
+const jsonwebtoken= require('jsonwebtoken')
 
 
 
@@ -38,6 +39,14 @@ const userSchema = mongoose.Schema({
         min: 0
     }
 })
+
+userSchema.methods.generateAuthToken = async function(){
+const user = this
+const token = await jsonwebtoken.sign({_id: user._id.toString()},
+'estoessupersecreto', {expiresIn:'7 Days'})
+return token
+}
+
 
 userSchema.statics.findUserByCredentials = async (email, password)=>{
     const user = await User.findOne({email: email})

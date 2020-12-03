@@ -22,10 +22,13 @@ router.get('/users/login', async (req,res)=>{
 router.post('/user/login', async (req,res)=>{
 try{
     const user = User.findUserByCredentials(req.body.email, req.body.password)
-}catch{
-
+    const token = user.generateAuthToken()
+    res.send ({user,token})
+}catch (error){
+    res.status (400).send()
 }
 })
+
 router.get('/users', async (req, res) => {
     try {
         const users = await User.find({})
