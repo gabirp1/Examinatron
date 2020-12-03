@@ -1,54 +1,52 @@
-const mongoose = require('mongoose')
-const validator= require ('validator')
-const bcrypt = require ('bcryptjs')
+const mongoose = require('mongoose');
+const validator = require('validator');
+const bcrypt = require('bcryptjs');
 
-const User = mongoose.model('User', {
-    name: {
+
+
+const userSchema = mongoose.Schema({
+    name:{
+        type: String,
+        required: true,
+        trim: true
+    },
+    email:{
         type: String,
         required: true,
         trim: true,
-        lowercase: true
-    },
-    email: {
-        type: String,
-        unique: true,    ////ponemos este parámetro para comprobar que no existen varios usuarios con ese correo
-        required: true,
-        trim:true,
+        unique:true,
         lowercase: true,
-        validate(value) {
-            if (!validator.isEmail(value)) {
-                throw new Error('Correo no válido')
-            }
-        }
-    },
-    password: {
-        type: String,
-        required: true,
-        trim: true,
-        lowercase: true,
-        minLength: [7,'Debe contener mínimo 7 caracteres'],
         validate(value){
-            if (value.toLowerCase().includes('password')) {
-                throw new Error('Password inválido')
-            }
+            if(!validator.isEmail(value))
+                throw new Error('Aprende a escribir');
         }
     },
-    age: {
+    password:{
+        type: String,
+        required: true,
+        trim: true,
+        minLength:7,
+
+        validate(valor){
+            if(valor.toLowerCase().includes('password'))
+                throw new Error('Easy pass');
+        }
+    },
+    age:{
         type: Number,
         default: 0,
-        validate(value) {
-            if (!value<0) {
-                throw new Error('La edad debe ser positiva')
-            }
-         }
+        min: 0
     }
 })
 
+userSchema.pre('save', async function(next){
+    const user = this; // Hace referencia al esquema
+    if(user.isModified('password')){
+        user.password = await bcrypt.hash(user.password, 8)
+    }
+    next();
+});
 
-User.pre('save' , aync function (next){
-   const user = this
-   if(user.isModified('password')){
-       user.password = await bcrypt.hash(user.password, 8)
-   }
-})
-module.exports = User
+
+const User = mongoose.model('User',userSchema);
+module.exports = User;
